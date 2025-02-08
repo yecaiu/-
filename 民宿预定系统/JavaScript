@@ -1,0 +1,53 @@
+// 点击菜单项切换显示不同内容
+document.getElementById('homeLink').addEventListener('click', function() {
+    toggleContent('homeContent');
+});
+document.getElementById('bookingLink').addEventListener('click', function() {
+    toggleContent('bookingContent');
+});
+document.getElementById('customerLink').addEventListener('click', function() {
+    toggleContent('customerContent');
+});
+document.getElementById('financeLink').addEventListener('click', function() {
+    toggleContent('financeContent');
+});
+document.getElementById('settingsLink').addEventListener('click', function() {
+    toggleContent('settingsContent');
+});
+
+// 切换内容显示
+function toggleContent(contentId) {
+    const contents = ['homeContent', 'bookingContent', 'customerContent', 'financeContent', 'settingsContent'];
+    contents.forEach(id => {
+        document.getElementById(id).classList.add('d-none');
+    });
+    document.getElementById(contentId).classList.remove('d-none');
+}
+
+// 取消预订
+function cancelBooking(bookingId) {
+    alert(`取消预订 #${bookingId}`);
+}
+
+// 编辑预订
+function editBooking(bookingId) {
+    alert(`编辑预订 #${bookingId}`);
+}
+
+// 初始化财务图表
+window.onload = function() {
+    var ctx = document.getElementById('incomeChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['12月1', '12月2', '12月3', '12月4', '12月5'],
+            datasets: [{
+                label: '收入 (¥)',
+                data: [500, 600, 700, 800, 900],
+                fill: false,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                tension: 0.1
+            }]
+        }
+    });
+};

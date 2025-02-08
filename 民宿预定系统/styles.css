@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.container-fluid {
+    margin-top: 20px;
+}
+
+.card-header {
+    font-size: 1.1rem;
+    background-color: #f1f1f1;
+}
+
+.card-body {
+    font-size: 1rem;
+}
+
+.table th {
+    background-color: #f1f1f1;
+}
+
+.btn {
+    margin-right: 10px;
+}
